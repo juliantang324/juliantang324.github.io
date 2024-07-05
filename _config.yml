@@ -21,10 +21,10 @@ repository               : "juliantang324/juliantang324.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "tyz.png"
   name             : "汤羽舟"
   pronouns         : "he/him" 
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Algorithm Engineer"
   location         : "Shanghai"
   employer         : "Xiamen University"
   uri              : # URL
