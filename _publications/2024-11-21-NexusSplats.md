@@ -1,7 +1,7 @@
 ---
 title: "NexusSplats: Efficient 3D Gaussian Splatting in the Wild"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
+permalink: /publication/2024-11-21-NexusSplats
 date: 2024-11-21
 project_page: 'https://nexus-splats.github.io/'
 paper_url: 'https://arxiv.org/abs/2411.14514'
