@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta content="Anil z" name="author">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+
+<!-- SITE TITLE -->
+<title>Julian Tang | Blog | Paper sharing - WildGaussians: 3D Gaussian Splatting in the Wild</title>
+<!-- Favicon Icon -->
+<link rel="shortcut icon" type="image/x-icon" href="../../assets/images/JT.png">
+<!-- Animation CSS -->
+<link rel="stylesheet" href="../../assets/css/animate.css">
+<!-- Latest Bootstrap min CSS -->
+<link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+<!-- Icon Font CSS -->
+<link rel="stylesheet" href="../../assets/css/ionicons.min.css">
+<link rel="stylesheet" href="../../assets/css/themify-icons.css">
+<!-- FontAwesome CSS -->
+<link rel="stylesheet" href="../../assets/css/all.min.css">
+<!-- Flaticon Font CSS -->
+<link rel="stylesheet" href="../../assets/css/flaticon.css">
+<!--- owl carousel CSS-->
+<link rel="stylesheet" href="../../assets/owlcarousel/css/owl.carousel.min.css">
+<link rel="stylesheet" href="../../assets/owlcarousel/css/owl.theme.css">
+<link rel="stylesheet" href="../../assets/owlcarousel/css/owl.theme.default.min.css">
+<!-- Magnific Popup CSS -->
+<link rel="stylesheet" href="../../assets/css/magnific-popup.css">
+<!-- Scrollbar Css -->
+<link rel="stylesheet" href="../../assets/css/jquery.mCustomScrollbar.min.css">
+<!-- Style CSS -->
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/responsive.css">
+
+</head>
+
+<body>
+
+<!-- LOADER -->
+<div class="preloader">
+    <div class="loader">
+		<div class="loader-inner ball-scale">
+          <div></div>
+          <div></div>
+          <div></div>
+		</div>
+	</div>
+</div>
+<!-- END LOADER -->
+
+<!-- START HEADER -->
+<header class="header_wrap fixed-top dark_skin hover_menu_style3 transparent-header">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+    	<a class="navbar-brand page-scroll" href="../../index.html#home_section">
+            <img class="logo_dark" src="../../assets/images/JT.png" alt="logo" style="height: 50px; width: 50px"/>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="ion-android-menu"></span> </button>
+      	<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        	<a class="navbar-brand page-scroll" href="../../index.html#home_section">
+                <img class="logo_dark" src="../../assets/images/JT.png" alt="logo" />
+            </a>
+            <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link page-scroll" href="../../index.html#home_section">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link page-scroll" href="../../index.html#about">About</a>
+                </li>
+                <li>
+                    <a class="nav-link page-scroll" href="../../index.html#work">Work</a>
+                </li>
+                <li>
+                    <a class="nav-link page-scroll" href="../../index.html#blog">Blog</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  </div>
+</header>
+<!-- START HEADER -->
+
+<!-- START SECTION BANNER -->
+<!--<section class="breadcrumb_section bg_gray pb-4">-->
+<!--	<div class="container">-->
+<!--    	<div class="row">-->
+<!--        	<div class="col-sm-6">-->
+<!--            	<div class="page-title">-->
+<!--            		<h1>Paper Sharing</h1>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
+<!-- END SECTION BANNER -->
+
+<!-- START SECTION BLOG -->
+<section>
+	<div class="container">
+    	<div class="row">
+        	<div class="col-lg-auto">
+            	<div class="single_post">
+                    <div class="blog_img">
+                        <img src="teaser.png" alt="blog_teaser">
+                    </div>
+                    <div class="blog_content">
+                        <div class="blog_text">
+                            <h1>WildGaussians: 3D Gaussian Splatting in the Wild</h1>
+                            <ul class="list_none blog_meta">
+                                <li><a href="#"><i class="ion-calendar"></i> September 24, 2024</a></li>
+                                <li><a href="#"><em>NeurIPS 2024</em></a></li>
+                            </ul>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada malesuada metus ut placerat. Cras a porttitor quam, eget ornare sapien. In sit amet vulputate metus. Nullam eget rutrum nisl. Sed tincidunt lorem sed maximus interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque efficitur mauris nec tincidunt. Ut cursus leo mi, eu ultricies magna faucibus id.</p>
+                            <blockquote>
+                            	<p>Integer id metus sit amet turpis facilisis ullamcorper. Sed tellus tellus, elementum ac mauris in, venenatis consectetur est. Praesent condimentum ut erat sit amet bibendum. Morbi sit amet commodo est. Donec arcu nulla, pellentesque at mi in, fringilla tincidunt risus. </p>
+                            </blockquote>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id dolor dui, dapibus gravida elit. Donec consequat laoreet sagittis. Suspendisse ultricies ultrices viverra. Morbi rhoncus laoreet tincidunt. Mauris interdum convallis metus. Suspendisse vel lacus est, sit amet tincidunt erat. Etiam purus sem, euismod eu vulputate eget, porta quis sapien. Donec tellus est, rhoncus vel scelerisque id, iaculis eu nibh.</p>
+                            <p>Duis vestibulum quis quam vel accumsan. Nunc a vulputate lectus. Vestibulum eleifend nisl sed massa sagittis vestibulum. Vestibulum pretium blandit tellus, sodales volutpat sapien varius vel. Phasellus tristique cursus erat, a placerat tellus laoreet eget. Fusce vitae dui sit amet lacus rutrum convallis. Vivamus sit amet lectus venenatis est rhoncus interdum a vitae velit.</p>
+
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="border-top border-bottom py-2 py-md-4 post_navigation">-->
+<!--                    <div class="row align-items-center justify-content-between">-->
+<!--                        <div class="col-auto">-->
+<!--                            <a href="#">-->
+<!--                                <div class="d-flex align-items-center">-->
+<!--                                    <i class="ion-arrow-left-c mr-2"></i>-->
+<!--                                    <div>-->
+<!--                                        <span>Previous Post</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                        <div class="col-auto">-->
+<!--                            <a href="#">-->
+<!--                                <div class="d-flex align-items-center flex-row-reverse text-right">-->
+<!--                                    <i class="ion-arrow-right-c ml-2"></i>-->
+<!--                                    <div>-->
+<!--                                        <span>Next Post</span>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- END SECTION BLOG -->
+
+<!-- START FOOTER SECTION -->
+<footer class="bg_gray">
+	<div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="bottom_footer border-top">
+                    <div class="row">
+                        <div class="col-12">
+                            <p class="copyright m-0 text-center">© 2024 All Rights Reserved By Julian Tang</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- END FOOTER SECTION -->
+
+
+<a href="#" class="scrollup" style="display: none;"><i class="ion-ios-arrow-up"></i></a>
+
+<!-- Latest jQuery -->
+<script src="../../assets/js/jquery-1.12.4.min.js"></script>
+<!-- jquery-ui -->
+<script src="../../assets/js/jquery-ui.js"></script>
+<!-- popper min js -->
+<script src="../../assets/js/popper.min.js"></script>
+<!-- Latest compiled and minified Bootstrap -->
+<script src="../../assets/bootstrap/js/bootstrap.min.js"></script>
+<!-- owl-carousel min js  -->
+<script src="../../assets/owlcarousel/js/owl.carousel.min.js"></script>
+<!-- magnific-popup min js  -->
+<script src="../../assets/js/magnific-popup.min.js"></script>
+<!-- waypoints min js  -->
+<script src="../../assets/js/waypoints.min.js"></script>
+<!-- parallax js  -->
+<script src="../../assets/js/parallax.js"></script>
+<!-- countdown js  -->
+<script src="../../assets/js/jquery.countdown.min.js"></script>
+<!-- jquery.counterup.min js -->
+<script src="../../assets/js/jquery.counterup.min.js"></script>
+<!-- imagesloaded js -->
+<script src="../../assets/js/imagesloaded.pkgd.min.js"></script>
+<!-- isotope min js -->
+<script src="../../assets/js/isotope.min.js"></script>
+<!-- vanilla-tilt.babel.min js -->
+<script src='../../assets/js/vanilla-tilt.babel.min.js'></script>
+<!-- typed.min js -->
+<script src="../../assets/js/typed.min.js"></script>
+<!-- typed text js -->
+<script src="../../assets/js/typed-text.js"></script>
+<!-- mCustomScrollbar.concat.min js -->
+<script src="../../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<!-- scripts js -->
+<script src="../../assets/js/scripts.js"></script>
+
+</body>
+</html>
