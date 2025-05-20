@@ -107,9 +107,7 @@
     	<div class="row">
         	<div class="col-lg-auto">
             	<div class="single_post">
-                    <div class="blog_img">
-                        <img src="teaser.png" alt="blog_teaser">
-                    </div>
+                    <div class="blog_img"><img src="teaser.png" alt="blog_teaser"></div>
                     <div class="blog_content">
                         <div class="blog_text">
                             <h1>WildGaussians: 3D Gaussian Splatting in the Wild</h1>
@@ -117,13 +115,74 @@
                                 <li><a href="#"><i class="ion-calendar"></i> September 24, 2024</a></li>
                                 <li><a href="#"><em>NeurIPS 2024</em></a></li>
                             </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada malesuada metus ut placerat. Cras a porttitor quam, eget ornare sapien. In sit amet vulputate metus. Nullam eget rutrum nisl. Sed tincidunt lorem sed maximus interdum. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aenean scelerisque efficitur mauris nec tincidunt. Ut cursus leo mi, eu ultricies magna faucibus id.</p>
-                            <blockquote>
-                            	<p>Integer id metus sit amet turpis facilisis ullamcorper. Sed tellus tellus, elementum ac mauris in, venenatis consectetur est. Praesent condimentum ut erat sit amet bibendum. Morbi sit amet commodo est. Donec arcu nulla, pellentesque at mi in, fringilla tincidunt risus. </p>
-                            </blockquote>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent id dolor dui, dapibus gravida elit. Donec consequat laoreet sagittis. Suspendisse ultricies ultrices viverra. Morbi rhoncus laoreet tincidunt. Mauris interdum convallis metus. Suspendisse vel lacus est, sit amet tincidunt erat. Etiam purus sem, euismod eu vulputate eget, porta quis sapien. Donec tellus est, rhoncus vel scelerisque id, iaculis eu nibh.</p>
-                            <p>Duis vestibulum quis quam vel accumsan. Nunc a vulputate lectus. Vestibulum eleifend nisl sed massa sagittis vestibulum. Vestibulum pretium blandit tellus, sodales volutpat sapien varius vel. Phasellus tristique cursus erat, a placerat tellus laoreet eget. Fusce vitae dui sit amet lacus rutrum convallis. Vivamus sit amet lectus venenatis est rhoncus interdum a vitae velit.</p>
-
+                            <p>
+                                近年来，3D场景重建技术因其在虚拟现实、影视制作等领域的广泛应用备受关注。传统方法以<strong>神经辐射场（NeRF）</strong>为代表，
+                                通过隐式建模实现高保真渲染，但其计算成本高且渲染速度慢。<strong>3D高斯泼溅（3D Gaussian Splatting, 3DGS）</strong>的提出弥补了这一缺陷，
+                                通过显式表示3D高斯分布实现了实时渲染。然而，无论是NeRF还是3DGS，在处理非受控环境（in-the-wild）数据时均面临挑战——例如动态遮挡、
+                                光照变化和复杂天气条件。
+                            </p>
+                            <p>
+                                为此，论文《WildGaussians: 3D Gaussian Splatting in the Wild》提出了一种新方法<strong>WildGaussians</strong>。
+                                它通过结合<strong>DINO特征</strong>和创新的外观建模模块，在保持3DGS实时渲染优势的同时，显著提升了动态遮挡和光照变化的处理能力。
+                                实验表明，WildGaussians在Photo Tourism和NeRF On-the-go等复杂数据集上的性能超越了现有方法，且渲染速度达到每秒117帧，
+                                为实际应用提供了高效可靠的解决方案。
+                            </p>
+                            <h2 style="margin-top: 20px">Background: Novel View Synthesis（新视角合成）</h2>
+                            <figure class="blog_img" style="text-align: center">
+                                <img src="nerf.png" alt="nerf">
+                                <figcaption>图1: NeRF的新视角合成过程。</figcaption>
+                            </figure>
+                            <p>
+                                新视角合成的目标是从一组已知相机位姿的输入图像中重建3D场景，并生成任意视角的逼真渲染。传统方法依赖多视图几何（如SFM），
+                                但难以处理复杂光照和非刚性物体。
+                            </p>
+                            <p>
+                                <strong>NeRF</strong>：通过隐式神经场（密度场+辐射场）建模场景，利用体渲染实现高质量合成，但计算量大，渲染速度慢。
+                            </p>
+                            <p>
+                                <strong>3DGS</strong>：显式表示场景为3D高斯分布，通过光栅化实现实时渲染，但因缺乏参数共享机制，难以适应动态场景和外观变化。
+                            </p>
+                            <p>
+                                两者的核心矛盾在于<strong>显式与隐式表示的权衡</strong>：3DGS高效但灵活性不足，而NeRF灵活但效率低下。
+                                如何兼顾两者优势，成为解决非受控场景问题的关键。
+                            </p>
+                            <h2 style="margin-top: 20px">Challenges: in-the-wild settings（非受控场景的挑战）</h2>
+                            <figure class="blog_img" style="text-align: center">
+                                <img src="challenges.png" alt="challenges">
+                                <figcaption>图2: 非受控场景的挑战。</figcaption>
+                            </figure>
+                            <p>
+                                在现实场景（如街拍、用户上传的互联网照片）中，数据通常包含以下挑战：
+                            </p>
+                            <h3 style="margin-top: 20px">Variable Illumination（光照变化）</h3>
+                            <p>
+                                同一场景在不同时间（如昼夜）、天气或相机曝光下的光照差异显著。传统方法依赖固定的颜色建模，无法适应此类变化，
+                                导致渲染结果出现曝光不一致或色彩偏差。
+                            </p>
+                            <h3 style="margin-top: 20px">Transient Occlusions（动态遮挡）</h3>
+                            <p>
+                                行人、车辆等动态遮挡物频繁出现在输入图像中，干扰场景重建。若直接优化，模型可能将遮挡物错误融入静态场景，
+                                破坏几何一致性。
+                            </p>
+                            <h2 style="margin-top: 20px">NeRF-based Methods</h2>
+                            <p>
+                                为应对上述挑战，现有NeRF方法提出以下改进：
+                            </p>
+                            <h3 style="margin-top: 20px">Appearance Modeling</h3>
+                            <p>
+                                通过每张图像的嵌入向量（per-image embedding）调节辐射场，捕捉光照和曝光变化（如NeRF-W）。但这类方法需为
+                                每张图像单独训练嵌入，计算成本高且难以扩展。
+                            </p>
+                            <h3 style="margin-top: 20px">Uncertainty Field</h3>
+                            <p>
+                                引入不确定性预测模块（如NeRF On-the-go），利用DINO特征识别遮挡区域，并在损失函数中降低其权重。然而，
+                                传统不确定性损失（如MSE或DSSIM）对光照变化敏感，易错误抑制静态区域，导致细节丢失。
+                            </p>
+                            <h2 style="margin-top: 20px">WildGaussians</h2>
+                            <div class="blog_img"><img src="wildgaussians.png" alt="wildgaussians"></div>
+                            <p>
+                                WildGaussians在3DGS框架内融合外观建模与不确定性优化，提出了两阶段解决方案：
+                            </p>
                         </div>
                     </div>
                 </div>
