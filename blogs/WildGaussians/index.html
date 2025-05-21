@@ -10,7 +10,7 @@
 <meta name="keywords" content="">
 
 <!-- SITE TITLE -->
-<title>Julian Tang | Blog | Paper sharing - WildGaussians: 3D Gaussian Splatting in the Wild</title>
+<title>Julian Tang | Blog - WildGaussians: 3D Gaussian Splatting in the Wild</title>
 <!-- Favicon Icon -->
 <link rel="shortcut icon" type="image/x-icon" href="../../assets/images/JT.png">
 <!-- Animation CSS -->
@@ -127,6 +127,12 @@
                                 实验表明，WildGaussians在Photo Tourism和NeRF On-the-go等复杂数据集上的性能超越了现有方法，且渲染速度达到每秒117帧，
                                 为实际应用提供了高效可靠的解决方案。
                             </p>
+                            <p>
+                                原文链接：<a href="https://arxiv.org/pdf/2407.08447">https://arxiv.org/pdf/2407.08447</a>
+                            </p>
+                            <p>
+                                项目地址：<a href="https://wild-gaussians.github.io">https://wild-gaussians.github.io</a>
+                            </p>
                             <h2 style="margin-top: 20px">Background: Novel View Synthesis（新视角合成）</h2>
                             <figure class="blog_img" style="text-align: center">
                                 <img src="nerf.png" alt="nerf">
@@ -179,7 +185,10 @@
                                 传统不确定性损失（如MSE或DSSIM）对光照变化敏感，易错误抑制静态区域，导致细节丢失。
                             </p>
                             <h2 style="margin-top: 20px">WildGaussians</h2>
-                            <div class="blog_img"><img src="wildgaussians.png" alt="wildgaussians"></div>
+                            <figure class="blog_img" style="text-align: center">
+                                <img src="wildgaussians.png" alt="challenges">
+                                <figcaption>图3: WildGaussians方法框架图。</figcaption>
+                            </figure>
                             <p>
                                 WildGaussians在3DGS框架内融合外观建模与不确定性优化，提出了两阶段解决方案：
                             </p>
